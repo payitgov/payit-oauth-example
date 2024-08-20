@@ -1,4 +1,4 @@
-# Payit oAuth Example
+# Payit OAuth Example
 
 This example application demonstrates how you might integrate PayIt Auth into you application to allow your users to authenticate with their PayIt credentials.
 
@@ -15,9 +15,9 @@ This example application demonstrates how you might integrate PayIt Auth into yo
 5. The application should be available at http://localhost:8080
 
 
-## Overall oAuth Configuration 
+## Overall OAuth Configuration 
 
-To utilize PayIt Oauth You need to contact us at productteam@payitgov.com for new client registration.
+To utilize PayIt OAuth You need to contact us at productteam@payitgov.com for new client registration.
 
 #### Provide us:
   A list of redirect uris. All the possible redirection entrypoints to which we should return the user.
@@ -28,9 +28,9 @@ To utilize PayIt Oauth You need to contact us at productteam@payitgov.com for ne
 
 The Client Secret should be kept in a secure location.
 
-## Implementing PayIt Oauth
+## Implementing PayIt OAuth
 
-Implementing PayIt Oauth is a two step process:
+Implementing PayIt OAuth is a two step process:
   * Invoke PayItOauthUI.authenticate()
   * Exchange your code for a PayIt JWT
 
@@ -55,7 +55,7 @@ Implementing PayIt Oauth is a two step process:
  PayitOauthUI.authenticate(CLIENT_ID, REDIRECT_URI);
  ```
 
- ##### Using PayIt Oauth SDK via CDN URL
+ ##### Using PayIt OAuth SDK via CDN URL
 
  This option is provided for UIs that are not complex and do not bundle javascript dependencies. In this case it is simpler to include the sdk in the necessary html file and use the methods as global variables.
 
