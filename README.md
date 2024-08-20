@@ -1,6 +1,6 @@
 # Payit oAuth Example
 
-This example application demonstrates how you might inrgtate PayIt Auth into you application to sllow your users to authenticate with their PayIt credentials.
+This example application demonstrates how you might integrate PayIt Auth into you application to allow your users to authenticate with their PayIt credentials.
 
 ## How to use this repository
 
