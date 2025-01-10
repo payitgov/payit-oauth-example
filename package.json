@@ -1,6 +1,6 @@
 {
   "name": "payit-oauth-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Example app for how to implement PayIt Oauth",
   "main": "index.js",
   "scripts": {

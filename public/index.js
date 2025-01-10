@@ -1,7 +1,7 @@
 "use strict";
 window.PayItLogin = function () {
     let callbackUri = window.location.origin + '/callback';
-    PayitOauth.PayitOauthUI.authenticate(window.payItClientId, callbackUri, 'development');
+    PayitOauth.PayitOauthUI.authenticate(window.payItClientId, callbackUri, 'development', ['everything'], { MyData: { 'abc': 123, time: Date.now() } });
 };
 
 window.LogOut = function () {
