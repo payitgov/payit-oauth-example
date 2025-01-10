@@ -10,5 +10,10 @@
     <a href="#" onclick="LogOut()"><button>Log Out</button></a>
     <script src="http://localhost:3000/payit-oauth-sdk.umd.js"></script>
     <script src="./index.js"></script>
+    <script>
+        const nonce = window.location.search.split('=')[1];
+        const state = PayitOauth.PayitOauthUI.retrieveState(nonce);
+        console.log('State Data', state);
+    </script>
 </body>
 </html>
