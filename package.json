@@ -15,7 +15,7 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "payit-oauth-sdk": "0.1.1",
+    "payit-oauth-sdk": "^0.2.0",
     "uuid": "9.0.1"
   },
   "devDependencies": {
