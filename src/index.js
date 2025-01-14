@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/callback', async (req, res) => {
-    const { code } = req.query;
+    const { code, state, } = req.query;
     if (!code) {
         res.status(400).send('Invalid code');
         return;
@@ -44,7 +44,7 @@ app.get('/callback', async (req, res) => {
     // Associate the client-side token with the PayIT Oauth token
     tokenStore[serverToken] = payItToken;
 
-    res.redirect('/loggedIn');
+    res.redirect(`/loggedIn?state=${state}`);
 });
 
 app.get('/loggedIn', isAuthenticated, (req, res) => {

@@ -8,7 +8,19 @@
 <body>
     <h1> You are Logged In</h1>
     <a href="#" onclick="LogOut()"><button>Log Out</button></a>
-    <script src="http://localhost:3000/payit-oauth-sdk.umd.js"></script>
+    <script src="https://d3ck169wa5xhu5.cloudfront.net/oauth/payit-oauth-sdk.umd.js"></script>
     <script src="./index.js"></script>
+    <script>
+        const searchParams = new URLSearchParams(window.location.search);
+        const nonce = searchParams.get('state');
+        const state = PayitOauth.PayitOauthUI.retrieveState(nonce);
+        console.log('State Data', state);
+        searchParams.delete('state');
+        if (history.replaceState) {
+            let searchString = searchParams.toString().length > 0 ? '?' + searchParams.toString() : '';
+            let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + searchString + window.location.hash;
+            history.replaceState(null, '', newUrl);
+        }
+    </script>
 </body>
 </html>
