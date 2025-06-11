@@ -48,7 +48,7 @@ app.get('/callback', async (req, res) => {
 });
 
 app.get('/loggedIn', isAuthenticated, (req, res) => {
-    res.render('loggedIn');
+    res.render('loggedIn', { clientId: process.env.PAYIT_CLIENT_ID });
 });
 
 app.post('/logout', (req, res) => {
