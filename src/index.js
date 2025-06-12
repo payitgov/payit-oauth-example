@@ -55,7 +55,7 @@ app.post('/logout', (req, res) => {
     const token = req.cookies['auth_token'];
     delete tokenStore[token];
     res.clearCookie('auth_token');
-    res.redirect('/');
+    res.json({ success: true });
 });
 
 app.listen(8080, () => {

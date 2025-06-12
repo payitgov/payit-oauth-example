@@ -5,17 +5,23 @@ window.PayItLogin = function () {
 };
 
 window.LogOut = function () {
+    // Step 1: Clear our application's login session first
     fetch('/logout', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(() => {
-        // Logout from PayIt IDP
+    }).then(response => response.json())
+    .then(() => {
+        // Step 2: After session is cleared, logout from PayIt IDP (this will redirect)
         if (typeof PayitOauth !== 'undefined' && PayitOauth.PayitOauthUI && typeof PayitOauth.PayitOauthUI.logout === 'function') {
             PayitOauth.PayitOauthUI.logout(payItClientId, window.location.origin + '/', 'development');
         } else {
             window.location.href = '/';
         }
+    }).catch(error => {
+        console.error('Logout error:', error);
+        // Fallback redirect to home page
+        window.location.href = '/';
     });
 }
