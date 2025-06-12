@@ -15,7 +15,7 @@ window.LogOut = function () {
     .then(() => {
         // Step 2: After session is cleared, logout from PayIt IDP (this will redirect)
         if (typeof PayitOauth !== 'undefined' && PayitOauth.PayitOauthUI && typeof PayitOauth.PayitOauthUI.logout === 'function') {
-            PayitOauth.PayitOauthUI.logout(payItClientId, window.location.origin + '/', 'development');
+            PayitOauth.PayitOauthUI.logout('development');
         } else {
             window.location.href = '/';
         }
